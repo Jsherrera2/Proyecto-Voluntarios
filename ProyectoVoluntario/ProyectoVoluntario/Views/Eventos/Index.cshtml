@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BEUProyecto.Evento>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Evento";
 }
 
 <h2>Index</h2>
@@ -9,25 +9,30 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha_inicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha_final)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.organizador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria.nombre)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-hover">
+    <thead class="bg-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_final)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria.nombre)
+            </th>
+            <th></th>
+        </tr>
+
+
+    </thead>
+ 
 
 @foreach (var item in Model) {
     <tr>
@@ -47,9 +52,12 @@
             @Html.DisplayFor(modelItem => item.Categoria.nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idevento }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idevento }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idevento })
+            <div class="btn-group">
+
+                @Html.ActionLink("  ", "Edit", new { id = item.idevento }, htmlAttributes: new { @class = "btn btn-sm btn-warning glyphicon glyphicon-pencil", @title = "Editar" })
+                @Html.ActionLink("  ", "Details", new { id = item.idevento }, htmlAttributes: new { @class = "btn btn-sm btn-primary glyphicon glyphicon-search", @title = "Ver" })
+                @Html.ActionLink("  ", "Delete", new { id = item.idevento }, htmlAttributes: new { @class = "btn btn-sm btn-danger glyphicon glyphicon-trash", @title = "Borrar" })
+            </div>
         </td>
     </tr>
 }

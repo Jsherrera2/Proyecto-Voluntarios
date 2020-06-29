@@ -9,31 +9,39 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cedula)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha_nacimiento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sexo)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-hover">
+
+    <thead class="bg-primary">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_nacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sexo)
+            </th>
+            <th></th>
+        </tr>
+
+
+    </thead>
+
+    
 
 @foreach (var item in Model) {
     <tr>
@@ -59,9 +67,14 @@
             @Html.DisplayFor(modelItem => item.sexo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idvoluntario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idvoluntario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idvoluntario })
+            <div class="btn-group">
+
+                @Html.ActionLink("  ", "Edit", new { id = item.idvoluntario }, htmlAttributes: new { @class = "btn btn-sm btn-warning glyphicon glyphicon-pencil", @title = "Editar" })
+                @Html.ActionLink("  ", "Details", new { id = item.idvoluntario }, htmlAttributes: new { @class = "btn btn-sm btn-primary glyphicon glyphicon-search", @title = "Ver" })
+                @Html.ActionLink("  ", "Delete", new { id = item.idvoluntario }, htmlAttributes: new { @class = "btn btn-sm btn-danger glyphicon glyphicon-trash", @title = "Borrar" })
+
+            </div>
+
         </td>
     </tr>
 }
