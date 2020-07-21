@@ -9,6 +9,7 @@
 
 namespace BEUProyecto
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -25,6 +26,8 @@ namespace BEUProyecto
         public string tiempo_actividad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+     
         public virtual ICollection<Registro> Registroes { get; set; }
     }
 }

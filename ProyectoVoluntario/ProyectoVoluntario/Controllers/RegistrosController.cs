@@ -50,7 +50,7 @@ namespace ProyectoVoluntario.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idregistro,fecha,estado,idvoluntario,idevento,idaporte")] Registro registro)
+        public ActionResult Create([Bind(Include = "idregistro,idvoluntario,idevento,idaporte")] Registro registro)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace ProyectoVoluntario.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idregistro,fecha,estado,idvoluntario,idevento,idaporte")] Registro registro)
+        public ActionResult Edit([Bind(Include = "idregistro,idvoluntario,idevento,idaporte")] Registro registro)
         {
             if (ModelState.IsValid)
             {

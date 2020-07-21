@@ -9,6 +9,7 @@
 
 namespace BEUProyecto
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -58,6 +59,7 @@ namespace BEUProyecto
         public string sexo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
         public virtual ICollection<Registro> Registroes { get; set; }
     }
 }

@@ -9,6 +9,7 @@
 
 namespace BEUProyecto
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -20,19 +21,24 @@ namespace BEUProyecto
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}")]
-        [Display(Name = "Fecha de Registro")]
+       // [Display(Name = "Fecha de Registro")]
         public Nullable<System.DateTime> fecha { get; set; }
 
         [DataType(DataType.Text)]
-        [Required(ErrorMessage = "El estado es requerido"), MaxLength(55)]
-        [Display(Name = "Estado")]
+       // [Required(ErrorMessage = "El estado es requerido"), MaxLength(55)]
+        //[Display(Name = "Estado")]
         public string estado { get; set; }
         public Nullable<int> idvoluntario { get; set; }
         public Nullable<int> idevento { get; set; }
         public Nullable<int> idaporte { get; set; }
-    
+
+
+        
         public virtual Aporte Aporte { get; set; }
+
         public virtual Evento Evento { get; set; }
+
+     
         public virtual Voluntario Voluntario { get; set; }
     }
 }
