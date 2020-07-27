@@ -2,38 +2,39 @@
 using BEUProyecto.Transactions;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.Description;
 using System.Web.Mvc;
 
 namespace WebApiVoluntario.Controllers
 {
-    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class VoluntarioController : ApiController
     {
+        [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
 
-        public IHttpActionResult Post(Voluntario Voluntario)
+        [ResponseType(typeof (Voluntario))]
+        public IHttpActionResult Get()
         {
+
             try
             {
-                VoluntarioBLL.Create(Voluntario);
-                return Content(HttpStatusCode.Created, "Voluntario creado correctamente");
+                List<Voluntario> todos = VoluntarioBLL.List();
+                return Content(HttpStatusCode.OK, todos);
+                //return Json(todos);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return Content(HttpStatusCode.BadRequest, ex);
             }
+            
         }
 
-        public IHttpActionResult Get()
-        {
-            List<Voluntario> todos = VoluntarioBLL.List();
-            return Content(HttpStatusCode.OK, todos);
-        }
-
+        [ResponseType(typeof(Voluntario))]
         public IHttpActionResult Delete(int id)
         {
             try
@@ -46,5 +47,53 @@ namespace WebApiVoluntario.Controllers
                 return Content(HttpStatusCode.BadRequest, ex);
             }
         }
+
+        [ResponseType(typeof(Voluntario))]
+        public IHttpActionResult Post(Voluntario voluntario)
+        {
+            try
+            {
+                VoluntarioBLL.Create(voluntario);
+                return Content(HttpStatusCode.Created, "Voluntario creado correctamente");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [ResponseType(typeof(Voluntario))]
+        public IHttpActionResult Put(Voluntario voluntario)
+        {
+            try
+            {
+                VoluntarioBLL.Update(voluntario);
+                return Content(HttpStatusCode.OK, "Voluntario actualizado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [ResponseType(typeof(Voluntario))]
+        public IHttpActionResult Get(int id)
+        {
+            try
+            {
+                Voluntario result = VoluntarioBLL.Get(id);
+                if (result == null)
+                {
+                    return NotFound();
+                }
+                return Content(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                return Content(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
     }
 }

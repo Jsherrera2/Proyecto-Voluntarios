@@ -33,12 +33,12 @@ namespace BEUProyecto
         public Nullable<int> idaporte { get; set; }
 
 
-        
+     
         public virtual Aporte Aporte { get; set; }
-
+       
         public virtual Evento Evento { get; set; }
 
-     
+      
         public virtual Voluntario Voluntario { get; set; }
     }
 }
