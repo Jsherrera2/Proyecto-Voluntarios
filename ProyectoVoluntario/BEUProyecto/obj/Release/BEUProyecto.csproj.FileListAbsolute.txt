@@ -1,0 +1,14 @@
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\BEUProyecto.dll.config
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\BEUProyecto.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\BEUProyecto.pdb
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\EntityFramework.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\Newtonsoft.Json.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\EntityFramework.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\bin\Release\Newtonsoft.Json.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Release\BEUProyecto.csprojAssemblyReference.cache
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Release\BEUProyecto.csproj.CoreCompileInputs.cache
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Release\BEUProyecto.csproj.CopyComplete
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Release\BEUProyecto.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Release\BEUProyecto.pdb
