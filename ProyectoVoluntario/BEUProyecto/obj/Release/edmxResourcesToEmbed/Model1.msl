@@ -56,5 +56,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="DBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="rptAporteVoluntario" FunctionName="DBModel.Store.rptAporteVoluntario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.rptAporteVoluntario_Result">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptCategoriasVoluntariado" FunctionName="DBModel.Store.rptCategoriasVoluntariado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.rptCategoriasVoluntariado_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptSexoVoluntario" FunctionName="DBModel.Store.rptSexoVoluntario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.rptSexoVoluntario_Result">
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

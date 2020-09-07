@@ -2,15 +2,16 @@
 using BEUProyecto.Transactions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Web;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
-using System.Web.Mvc;
-using System.Web.Security;
+
 
 namespace WebApiVoluntario.Controllers
 {
@@ -19,6 +20,7 @@ namespace WebApiVoluntario.Controllers
         [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
 
         [ResponseType(typeof (Voluntario))]
+        [Authorize(Roles = "usuario")]
         public IHttpActionResult Get()
         {
 
@@ -36,6 +38,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
+        [Authorize(Roles = "usuario")]
         public IHttpActionResult Delete(int id)
         {
             try
@@ -50,7 +53,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
-        [System.Web.Http.Authorize(Roles = "docente")]
+        [Authorize(Roles = "usuario")]
         public IHttpActionResult Post(Voluntario voluntario)
         {
             try
@@ -65,7 +68,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
-       
+        [Authorize(Roles = "usuario")]
         public IHttpActionResult Put(Voluntario voluntario)
         {
             try
@@ -81,6 +84,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
+        [Authorize(Roles = "usuario")]
         public IHttpActionResult Get(int id)
         {
             try

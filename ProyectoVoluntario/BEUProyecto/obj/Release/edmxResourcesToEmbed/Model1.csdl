@@ -128,5 +128,30 @@
       <End Role="Voluntario" EntitySet="Voluntarios" />
       <End Role="Registro" EntitySet="Registroes" />
     </AssociationSet>
+    <EntitySet Name="Usuarios" EntityType="DBModel.Usuario" />
+    <FunctionImport Name="rptAporteVoluntario" ReturnType="Collection(DBModel.rptAporteVoluntario_Result)" />
+    <FunctionImport Name="rptCategoriasVoluntariado" ReturnType="Collection(DBModel.rptCategoriasVoluntariado_Result)" />
+    <FunctionImport Name="rptSexoVoluntario" ReturnType="Collection(DBModel.rptSexoVoluntario_Result)" />
   </EntityContainer>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idusuario" />
+    </Key>
+    <Property Name="idusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="rptAporteVoluntario_Result">
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptCategoriasVoluntariado_Result">
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptSexoVoluntario_Result">
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
 </Schema>
