@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace WebApiVoluntario.Controllers
 {
@@ -49,6 +50,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
+        [System.Web.Http.Authorize(Roles = "docente")]
         public IHttpActionResult Post(Voluntario voluntario)
         {
             try
@@ -63,6 +65,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
+       
         public IHttpActionResult Put(Voluntario voluntario)
         {
             try
