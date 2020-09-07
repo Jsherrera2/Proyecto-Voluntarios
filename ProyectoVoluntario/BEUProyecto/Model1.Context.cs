@@ -12,6 +12,8 @@ namespace BEUProyecto
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Entities : DbContext
     {
@@ -30,5 +32,21 @@ namespace BEUProyecto
         public virtual DbSet<Evento> Eventoes { get; set; }
         public virtual DbSet<Registro> Registroes { get; set; }
         public virtual DbSet<Voluntario> Voluntarios { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+    
+        public virtual ObjectResult<rptAporteVoluntario_Result> rptAporteVoluntario()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptAporteVoluntario_Result>("rptAporteVoluntario");
+        }
+    
+        public virtual ObjectResult<rptCategoriasVoluntariado_Result> rptCategoriasVoluntariado()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptCategoriasVoluntariado_Result>("rptCategoriasVoluntariado");
+        }
+    
+        public virtual ObjectResult<rptSexoVoluntario_Result> rptSexoVoluntario()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptSexoVoluntario_Result>("rptSexoVoluntario");
+        }
     }
 }

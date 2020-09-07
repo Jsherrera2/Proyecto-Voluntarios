@@ -172,6 +172,7 @@
     <Compile Include="Controllers\RegistroController .cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VoluntarioController.cs" />
     <Compile Include="Global.asax.cs">

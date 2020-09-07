@@ -37,6 +37,15 @@
     <Property Name="idevento" Type="int" />
     <Property Name="idaporte" Type="int" />
   </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idusuario" />
+    </Key>
+    <Property Name="idusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="contrasena" Type="varchar" MaxLength="50" />
+    <Property Name="rol" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Voluntario">
     <Key>
       <PropertyRef Name="idvoluntario" />
@@ -98,11 +107,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="rptAporteVoluntario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rptCategoriasVoluntariado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rptSexoVoluntario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="DBModelStoreContainer">
     <EntitySet Name="Aporte" EntityType="Self.Aporte" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registro" EntityType="Self.Registro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Voluntario" EntityType="Self.Voluntario" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Evento_Categoria" Association="Self.FK_Evento_Categoria">
       <End Role="Categoria" EntitySet="Categoria" />

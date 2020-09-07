@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Aporte">
           <Key>
             <PropertyRef Name="idaporte" />
@@ -41,6 +41,15 @@
           <Property Name="idvoluntario" Type="int" />
           <Property Name="idevento" Type="int" />
           <Property Name="idaporte" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idusuario" />
+          </Key>
+          <Property Name="idusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+          <Property Name="rol" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Voluntario">
           <Key>
@@ -103,11 +112,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="rptAporteVoluntario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="rptCategoriasVoluntariado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="rptSexoVoluntario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBModelStoreContainer">
           <EntitySet Name="Aporte" EntityType="Self.Aporte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Registro" EntityType="Self.Registro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Voluntario" EntityType="Self.Voluntario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Evento_Categoria" Association="Self.FK_Evento_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
@@ -126,8 +139,7 @@
             <End Role="Registro" EntitySet="Registro" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -259,7 +271,32 @@
             <End Role="Voluntario" EntitySet="Voluntarios" />
             <End Role="Registro" EntitySet="Registroes" />
           </AssociationSet>
+          <EntitySet Name="Usuarios" EntityType="DBModel.Usuario" />
+          <FunctionImport Name="rptAporteVoluntario" ReturnType="Collection(DBModel.rptAporteVoluntario_Result)" />
+          <FunctionImport Name="rptCategoriasVoluntariado" ReturnType="Collection(DBModel.rptCategoriasVoluntariado_Result)" />
+          <FunctionImport Name="rptSexoVoluntario" ReturnType="Collection(DBModel.rptSexoVoluntario_Result)" />
         </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idusuario" />
+          </Key>
+          <Property Name="idusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="rptAporteVoluntario_Result">
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="rptCategoriasVoluntariado_Result">
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="rptSexoVoluntario_Result">
+          <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -321,6 +358,40 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="DBModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="rol" ColumnName="rol" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="rptAporteVoluntario" FunctionName="DBModel.Store.rptAporteVoluntario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBModel.rptAporteVoluntario_Result">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="rptCategoriasVoluntariado" FunctionName="DBModel.Store.rptCategoriasVoluntariado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBModel.rptCategoriasVoluntariado_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="rptSexoVoluntario" FunctionName="DBModel.Store.rptSexoVoluntario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBModel.rptSexoVoluntario_Result">
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

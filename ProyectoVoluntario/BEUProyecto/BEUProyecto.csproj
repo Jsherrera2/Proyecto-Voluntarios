@@ -81,11 +81,25 @@
     <Compile Include="Registro.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="rptAporteVoluntario_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rptCategoriasVoluntariado_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rptSexoVoluntario_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\AporteBLL.cs" />
     <Compile Include="Transactions\CategoriaBLL.cs" />
     <Compile Include="Transactions\EventoBLL.cs" />
     <Compile Include="Transactions\RegistroBLL.cs" />
+    <Compile Include="Transactions\ReporteBLL.cs" />
+    <Compile Include="Transactions\UsuarioBLL.cs" />
     <Compile Include="Transactions\VoluntarioBLL.cs" />
+    <Compile Include="Usuario.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Voluntario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
