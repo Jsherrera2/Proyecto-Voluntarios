@@ -20,7 +20,7 @@ namespace WebApiVoluntario.Controllers
         [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
 
         [ResponseType(typeof (Voluntario))]
-        [Authorize(Roles = "usuario")]
+       
         public IHttpActionResult Get()
         {
 
@@ -38,7 +38,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
-        [Authorize(Roles = "usuario")]
+       
         public IHttpActionResult Delete(int id)
         {
             try
@@ -53,7 +53,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
-        [Authorize(Roles = "usuario")]
+       
         public IHttpActionResult Post(Voluntario voluntario)
         {
             try
@@ -68,7 +68,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
-        [Authorize(Roles = "usuario")]
+       
         public IHttpActionResult Put(Voluntario voluntario)
         {
             try
@@ -84,7 +84,7 @@ namespace WebApiVoluntario.Controllers
         }
 
         [ResponseType(typeof(Voluntario))]
-        [Authorize(Roles = "usuario")]
+        
         public IHttpActionResult Get(int id)
         {
             try

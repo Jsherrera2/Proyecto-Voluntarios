@@ -95,6 +95,7 @@
     <Compile Include="Transactions\EventoBLL.cs" />
     <Compile Include="Transactions\RegistroBLL.cs" />
     <Compile Include="Transactions\ReporteBLL.cs" />
+    <Compile Include="Transactions\ReporteSexoBLL.cs" />
     <Compile Include="Transactions\UsuarioBLL.cs" />
     <Compile Include="Transactions\VoluntarioBLL.cs" />
     <Compile Include="Usuario.cs">
