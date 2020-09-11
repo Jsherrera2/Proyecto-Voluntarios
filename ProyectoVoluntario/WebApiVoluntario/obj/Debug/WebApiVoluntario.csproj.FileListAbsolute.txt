@@ -103,3 +103,14 @@ C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVolun
 C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\obj\Debug\WebApiVoluntario.csproj.CopyComplete
 C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\obj\Debug\WebApiVoluntario.dll
 C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\obj\Debug\WebApiVoluntario.pdb
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\JWT.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\JWT.pdb
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\JWT.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\WebApiVoluntario\bin\System.IdentityModel.Tokens.Jwt.xml

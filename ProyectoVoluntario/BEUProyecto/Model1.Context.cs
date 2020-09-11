@@ -48,5 +48,30 @@ namespace BEUProyecto
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptSexoVoluntario_Result>("rptSexoVoluntario");
         }
+    
+        public virtual ObjectResult<rptGenero_Result> rptGenero()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptGenero_Result>("rptGenero");
+        }
+    
+        public virtual ObjectResult<rptCategoria_Result> rptCategoria()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptCategoria_Result>("rptCategoria");
+        }
+    
+        public virtual ObjectResult<rptAporte_Result> rptAporte()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptAporte_Result>("rptAporte");
+        }
+    
+        public virtual ObjectResult<rptCatV_Result> rptCatV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptCatV_Result>("rptCatV");
+        }
+    
+        public virtual ObjectResult<rptSexo_Result> rptSexo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rptSexo_Result>("rptSexo");
+        }
     }
 }

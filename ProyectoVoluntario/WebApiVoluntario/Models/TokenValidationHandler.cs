@@ -57,11 +57,11 @@ namespace WebApiVoluntario.Models
 
                 return base.SendAsync(request, cancellationToken);
             }
-            catch (SecurityTokenValidationException ex)
+            catch (SecurityTokenValidationException )
             {
                 statusCode = HttpStatusCode.Unauthorized;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 statusCode = HttpStatusCode.InternalServerError;
             }

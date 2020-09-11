@@ -8,24 +8,14 @@ namespace BEUProyecto.Transactions
 {
     public class ReporteBLL
     {
-        public static List<rptAporteVoluntario_Result> GetAporte()
+
+        public static List<rptSexo_Result> Get()
         {
             Entities db = new Entities();
-            return db.rptAporteVoluntario().ToList();
-        }
+            return db.rptSexo().ToList();
 
-        public static List<rptCategoriasVoluntariado_Result> GetCategoria()
-        {
-            Entities db = new Entities();
-            return db.rptCategoriasVoluntariado().ToList();
-        }
 
-        public static List<rptSexoVoluntario_Result> GetSexo()
-        {
-            Entities db = new Entities();
-            return db.rptSexoVoluntario().ToList();
         }
-
 
 
     }

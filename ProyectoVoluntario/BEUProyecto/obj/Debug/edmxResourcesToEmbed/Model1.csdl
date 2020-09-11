@@ -132,6 +132,11 @@
     <FunctionImport Name="rptAporteVoluntario" ReturnType="Collection(DBModel.rptAporteVoluntario_Result)" />
     <FunctionImport Name="rptCategoriasVoluntariado" ReturnType="Collection(DBModel.rptCategoriasVoluntariado_Result)" />
     <FunctionImport Name="rptSexoVoluntario" ReturnType="Collection(DBModel.rptSexoVoluntario_Result)" />
+    <FunctionImport Name="rptGenero" ReturnType="Collection(DBModel.rptGenero_Result)" />
+    <FunctionImport Name="rptCategoria" ReturnType="Collection(DBModel.rptCategoria_Result)" />
+    <FunctionImport Name="rptAporte" ReturnType="Collection(DBModel.rptAporte_Result)" />
+    <FunctionImport Name="rptCatV" ReturnType="Collection(DBModel.rptCatV_Result)" />
+    <FunctionImport Name="rptSexo" ReturnType="Collection(DBModel.rptSexo_Result)" />
   </EntityContainer>
   <EntityType Name="Usuario">
     <Key>
@@ -151,6 +156,26 @@
     <Property Type="Int32" Name="C_Eventos" Nullable="true" />
   </ComplexType>
   <ComplexType Name="rptSexoVoluntario_Result">
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptGenero_Result">
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptCategoria_Result">
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptAporte_Result">
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptCatV_Result">
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptSexo_Result">
     <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
     <Property Type="Int32" Name="C_Eventos" Nullable="true" />
   </ComplexType>
