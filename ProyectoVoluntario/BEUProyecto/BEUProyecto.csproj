@@ -81,6 +81,12 @@
     <Compile Include="Registro.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="rptAgrupadoAporte_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rptAgrupadoEventoGenero_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="rptAporteVoluntario_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -109,6 +115,8 @@
     <Compile Include="Transactions\CategoriaBLL.cs" />
     <Compile Include="Transactions\EventoBLL.cs" />
     <Compile Include="Transactions\RegistroBLL.cs" />
+    <Compile Include="Transactions\ReporteAgrupadoAporteBLL.cs" />
+    <Compile Include="Transactions\ReporteAgrupadoEyGBLL.cs" />
     <Compile Include="Transactions\ReporteBLL.cs" />
     <Compile Include="Transactions\ReporteCategoria.cs" />
     <Compile Include="Transactions\UsuarioBLL.cs" />

@@ -90,5 +90,23 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptAgrupadoAporte" FunctionName="DBModel.Store.rptAgrupadoAporte">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.rptAgrupadoAporte_Result">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="NumEventos" ColumnName="NumEventos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptAgrupadoEventoGenero" FunctionName="DBModel.Store.rptAgrupadoEventoGenero">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.rptAgrupadoEventoGenero_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="C_Eventos" ColumnName="#Eventos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

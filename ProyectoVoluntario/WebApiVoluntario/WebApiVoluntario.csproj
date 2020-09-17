@@ -188,6 +188,8 @@
     <Compile Include="Controllers\RegistroController .cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReporteAgrupadoAyEController.cs" />
+    <Compile Include="Controllers\ReporteAgrupadoEyGController.cs" />
     <Compile Include="Controllers\ReporteCateController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Controllers\ReporteGeneroController.cs" />

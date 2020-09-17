@@ -23,3 +23,4 @@ C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto
 C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Debug\BEUProyecto.csproj.CopyComplete
 C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Debug\BEUProyecto.dll
 C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Debug\BEUProyecto.pdb
+C:\Users\STALIN\source\repos\Proyecto-Voluntarios\ProyectoVoluntario\BEUProyecto\obj\Debug\BEUProyecto.csprojAssemblyReference.cache

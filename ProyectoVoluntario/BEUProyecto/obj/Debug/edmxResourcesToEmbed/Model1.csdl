@@ -137,6 +137,8 @@
     <FunctionImport Name="rptAporte" ReturnType="Collection(DBModel.rptAporte_Result)" />
     <FunctionImport Name="rptCatV" ReturnType="Collection(DBModel.rptCatV_Result)" />
     <FunctionImport Name="rptSexo" ReturnType="Collection(DBModel.rptSexo_Result)" />
+    <FunctionImport Name="rptAgrupadoAporte" ReturnType="Collection(DBModel.rptAgrupadoAporte_Result)" />
+    <FunctionImport Name="rptAgrupadoEventoGenero" ReturnType="Collection(DBModel.rptAgrupadoEventoGenero_Result)" />
   </EntityContainer>
   <EntityType Name="Usuario">
     <Key>
@@ -176,6 +178,16 @@
     <Property Type="Int32" Name="C_Eventos" Nullable="true" />
   </ComplexType>
   <ComplexType Name="rptSexo_Result">
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="C_Eventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptAgrupadoAporte_Result">
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="NumEventos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptAgrupadoEventoGenero_Result">
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
     <Property Type="Int32" Name="C_Eventos" Nullable="true" />
   </ComplexType>
